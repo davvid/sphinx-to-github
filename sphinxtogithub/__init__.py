@@ -1,5 +1,6 @@
 """Script for preparing the html output of the Sphinx documentation system for
 github pages. """
+from __future__  import absolute_import, division, unicode_literals
 
 VERSION = (1, 1, 0, 'dev')
 
@@ -10,7 +11,7 @@ __contact__ = "http://github.com/michaeljones"
 __homepage__ = "http://github.com/michaeljones/sphinx-to-github"
 __docformat__ = "restructuredtext"
 
-from sphinxtogithub import (
+from .sphinxtogithub import (
     setup,
     sphinx_extension,
     LayoutFactory,
@@ -26,4 +27,3 @@ from sphinxtogithub import (
     OperationsFactory,
     HandlerFactory
 )
-

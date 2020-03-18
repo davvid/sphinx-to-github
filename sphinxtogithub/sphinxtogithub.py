@@ -1,11 +1,15 @@
 #! /usr/bin/env python
- 
+from __future__ import absolute_import
 from optparse import OptionParser
 
 import os
 import sys
 import shutil
 import codecs
+
+
+def stdout(msg):
+    sys.stdout.write(msg + '\n')
 
 
 class DirHelper(object):
@@ -276,12 +280,14 @@ def sphinx_extension(app, exception):
 
     if not app.config.sphinx_to_github:
         if app.config.sphinx_to_github_verbose:
-            print "Sphinx-to-github: Disabled, doing nothing."
+            stdout("Sphinx-to-github: Disabled, doing nothing.")
         return
 
     if exception:
         if app.config.sphinx_to_github_verbose:
-            print "Sphinx-to-github: Exception raised in main build, doing nothing."
+            msg = ("Sphinx-to-github: "
+                   "Exception raised in main build, doing nothing.")
+            stdout(msg)
         return
 
     dir_helper = DirHelper(
