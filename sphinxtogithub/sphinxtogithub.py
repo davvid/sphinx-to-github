@@ -107,7 +107,7 @@ class DirectoryHandler(object):
 
         self.name = name
         self.new_name = name[1:]
-        self.root = root + os.sep
+        self.root = str(root) + os.sep
         self.renamer = renamer
 
     def path(self):
